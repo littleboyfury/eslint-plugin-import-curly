@@ -16,7 +16,7 @@ const baseTests = {
     },
     `import A from 'C'`,
     `import * as A from 'C'`,
-    `import {\n  A as AA,\n  B\n} from 'C'\nimport A, {\n  AA as AAA,\n  B as BB,\n  C,\n} from 'D'`,
+    `import {\r\n  A as AA,\r\n  B\r\n} from 'C'\nimport A, {\r\n  AA as AAA,\r\n  B as BB,\r\n  C,\r\n} from 'D'`,
     `import {\n  A as AA,\n  B,\n} from 'C'`,
     `import A, {\n  AA as AAA,\n  B as BB,\n  C,\n} from 'D'`
   ],
@@ -71,8 +71,8 @@ const tsTests = {
       options: [{count: 2}]
     },
     {
-      code: `import type {A \nas AA,B} from 'C'`,
-      output: `import type {\n  A as AA,\n  B\n} from 'C'`,
+      code: `import type {A \ras AA,B} from 'C'`,
+      output: `import type {\r  A as AA,\r  B\r} from 'C'`,
       errors: [{message}],
       options: [{count: 2}]
     },
@@ -83,8 +83,8 @@ const tsTests = {
       options: [{count: 2}]
     },
     {
-      code: `import {\ntype \nA \nas \nAA,\ntype B,} from 'C'`,
-      output: `import {\n  type A as AA,\n  type B,\n} from 'C'`,
+      code: `import {\r\ntype \r\nA \r\nas \r\nAA,\r\ntype B,} from 'C'`,
+      output: `import {\r\n  type A as AA,\r\n  type B,\r\n} from 'C'`,
       errors: [{message}],
       options: [{count: 2}]
     },
