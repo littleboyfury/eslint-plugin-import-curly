@@ -196,7 +196,7 @@ import {a,type b,c,default as d} from 'a'
     "import-curly/sort-params": [
       "error",
       {
-        "typeLocation": "ignore",
+        "typeLocation": "first",
         "orderBy": "alphabeticalOrder",
         "sortBy": "aec",
         "ignoreCase": true
